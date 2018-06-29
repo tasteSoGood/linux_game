@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <unistd.h>
-#include <termio.h>
+#include <termios.h>
 #include "disp.h"
 #include "init.h"
 

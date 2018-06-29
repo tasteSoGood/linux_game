@@ -32,12 +32,16 @@ snake initial() {
 }
 
 void update_snake(snake s) {
+    // 更新
     food *p = s.head, *q = p->next;
-    while(q != NULL) {
-        q->x = p->x;
-        q->y = p->y;
-        p = p->next;
+    int s_x = p->x, s_y = p->y, t_x = q->x, t_y = q->y;
+    while (q) {
+        q->x = s_x, q->y = s_y;
+        s_x = t_x, s_y = t_y;
         q = q->next;
+        if (q) {
+            t_x = q->x, t_y = q->y;
+        }
     }
 }
 
