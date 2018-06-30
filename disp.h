@@ -12,11 +12,13 @@ void disp_chess();
 void print_snake(snake);
 
 void print_point(int x, int y) {
-    printf("\033[%d;%dH□\033[0m", x, y * 2);
+    printf("\033[%d;%dH□ \033[0m", x, y * 2); // 后面加空格，使方块能够正常输出
+    fflush(stdout); // 刷新缓冲区，在使用sleep的时候也可以有效打印
 }
 
 void print_food(int x, int y) {
-    printf("\033[%d;%dH■\033[0m", x, y * 2);
+    printf("\033[%d;%dH■ \033[0m", x, y * 2);
+    fflush(stdout);
 }
 
 void disp_chess() {
